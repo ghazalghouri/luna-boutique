@@ -1,0 +1,881 @@
+/* =========================
+   ROOT VARIABLES
+========================= */
+
+:root {
+    --cream: #f7f3ee;
+    --warm-white: #fffdf9;
+    --charcoal: #252525;
+    --muted: #77716b;
+    --border: #ded8d0;
+    --accent: #a07d68;
+    --accent-dark: #795b49;
+
+    --serif: "DM Serif Display", serif;
+    --sans: "Montserrat", sans-serif;
+}
+
+
+/* =========================
+   GLOBAL
+========================= */
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    margin: 0;
+    font-family: var(--sans);
+    color: var(--charcoal);
+    background: var(--warm-white);
+    line-height: 1.7;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+.section-padding {
+    padding: 100px 0;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.luna-navbar {
+    background: rgba(255, 253, 249, 0.94);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.luna-logo {
+    font-family: var(--serif);
+    font-size: 2rem;
+    color: var(--charcoal);
+    letter-spacing: 2px;
+}
+
+.luna-logo span,
+.footer-logo span {
+    color: var(--accent);
+}
+
+.nav-link {
+    color: var(--charcoal);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0 8px;
+    position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--accent-dark);
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 1px;
+    background: var(--accent);
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 70%;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.luna-btn {
+    padding: 13px 25px;
+    border-radius: 0;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.luna-btn-dark {
+    background: var(--charcoal);
+    color: white;
+    border: 1px solid var(--charcoal);
+}
+
+.luna-btn-dark:hover {
+    background: var(--accent-dark);
+    border-color: var(--accent-dark);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.luna-btn-outline {
+    border: 1px solid var(--charcoal);
+    color: var(--charcoal);
+    background: transparent;
+}
+
+.luna-btn-outline:hover {
+    background: var(--charcoal);
+    color: white;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero-section {
+    background: var(--cream);
+    overflow: hidden;
+}
+
+.hero-content {
+    padding-top: 90px;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-subtitle,
+.section-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: var(--accent-dark);
+    margin-bottom: 20px;
+}
+
+.hero-content h1 {
+    font-family: var(--serif);
+    font-size: clamp(3.5rem, 6vw, 6.5rem);
+    line-height: 0.98;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.hero-content h1 span {
+    display: block;
+    color: var(--accent-dark);
+}
+
+.hero-description {
+    max-width: 500px;
+    color: var(--muted);
+    font-size: 1rem;
+    margin-bottom: 35px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.hero-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.hero-features div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--muted);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.hero-features i {
+    color: var(--accent);
+    font-size: 1rem;
+}
+
+.hero-image-wrapper {
+    padding-top: 90px;
+    padding-bottom: 50px;
+}
+
+.hero-image-card {
+    position: relative;
+    max-width: 560px;
+    margin-left: auto;
+}
+
+.hero-image {
+    width: 100%;
+    height: 680px;
+    object-fit: cover;
+}
+
+.floating-card {
+    position: absolute;
+    bottom: 35px;
+    left: -35px;
+    background: white;
+    padding: 25px 30px;
+    min-width: 230px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.floating-card small {
+    display: block;
+    color: var(--accent);
+    letter-spacing: 2px;
+    font-size: 0.6rem;
+    margin-bottom: 5px;
+}
+
+.floating-card strong {
+    display: block;
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.floating-card span {
+    color: var(--muted);
+    font-size: 0.7rem;
+}
+
+
+/* =========================
+   SECTION TITLES
+========================= */
+
+.section-title {
+    font-family: var(--serif);
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    line-height: 1.1;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.section-title span {
+    color: var(--accent-dark);
+}
+
+.section-description {
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+
+/* =========================
+   COLLECTION INTRO
+========================= */
+
+.collection-intro {
+    background: var(--warm-white);
+    padding-bottom: 40px;
+}
+
+
+/* =========================
+   PRODUCTS
+========================= */
+
+.products-section {
+    padding-top: 40px;
+}
+
+.product-card {
+    height: 100%;
+}
+
+.product-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    background: var(--cream);
+}
+
+.product-image {
+    width: 100%;
+    height: 460px;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.04);
+}
+
+.product-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 2;
+    background: white;
+    padding: 7px 12px;
+    font-size: 0.6rem;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+}
+
+.product-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(20, 20, 20, 0.18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.product-card:hover .product-overlay {
+    opacity: 1;
+}
+
+.quick-view-btn {
+    border: none;
+    background: white;
+    padding: 13px 22px;
+    font-family: var(--sans);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.product-info {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 20px 0 10px;
+}
+
+.product-info h3 {
+    font-family: var(--serif);
+    font-size: 1.45rem;
+    font-weight: 400;
+    margin: 0;
+}
+
+.product-info p {
+    color: var(--muted);
+    font-size: 0.7rem;
+    margin: 3px 0 0;
+}
+
+.product-info strong {
+    font-size: 0.8rem;
+    white-space: nowrap;
+}
+
+.product-order {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--charcoal);
+    border-bottom: 1px solid var(--charcoal);
+    padding-bottom: 3px;
+    font-size: 0.68rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.product-order:hover {
+    color: var(--accent-dark);
+    border-color: var(--accent-dark);
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-section {
+    background: var(--cream);
+}
+
+.about-image-wrapper {
+    position: relative;
+    padding-right: 35px;
+    padding-bottom: 35px;
+}
+
+.about-image-wrapper::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 75%;
+    height: 75%;
+    border: 1px solid var(--accent);
+    z-index: 0;
+}
+
+.about-image {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 650px;
+    object-fit: cover;
+}
+
+.about-year {
+    position: absolute;
+    z-index: 2;
+    bottom: 10px;
+    left: -20px;
+    background: var(--charcoal);
+    color: white;
+    padding: 20px 25px;
+}
+
+.about-year strong {
+    display: block;
+    font-family: var(--serif);
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.about-year span {
+    font-size: 0.6rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.about-text {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.text-link {
+    display: inline-flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 15px;
+    color: var(--charcoal);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--charcoal);
+    padding-bottom: 5px;
+}
+
+
+/* =========================
+   WHY LUNA
+========================= */
+
+.why-section {
+    background: var(--warm-white);
+}
+
+.feature-card {
+    padding: 35px 25px;
+    border: 1px solid var(--border);
+    height: 100%;
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+}
+
+.feature-icon {
+    font-size: 1.8rem;
+    color: var(--accent);
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    font-family: var(--serif);
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+.feature-card p {
+    color: var(--muted);
+    font-size: 0.8rem;
+    margin-bottom: 0;
+}
+
+
+/* =========================
+   TESTIMONIAL
+========================= */
+
+.testimonial-section {
+    background: var(--charcoal);
+    color: white;
+}
+
+.testimonial-icon {
+    color: var(--accent);
+    font-size: 2.5rem;
+}
+
+.testimonial-section blockquote {
+    font-family: var(--serif);
+    font-size: clamp(1.8rem, 3vw, 3rem);
+    line-height: 1.25;
+    margin: 15px auto 25px;
+}
+
+.testimonial-name {
+    color: #bbb;
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-section {
+    background: var(--cream);
+}
+
+.contact-info {
+    margin-top: 35px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 25px;
+}
+
+.contact-item > i {
+    font-size: 1.4rem;
+    color: var(--accent);
+}
+
+.contact-item small {
+    display: block;
+    font-size: 0.55rem;
+    letter-spacing: 2px;
+    color: var(--muted);
+}
+
+.contact-item a,
+.contact-item span {
+    color: var(--charcoal);
+    font-size: 0.85rem;
+}
+
+.contact-form-card {
+    background: white;
+    padding: 40px;
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.05);
+}
+
+.contact-form-card label {
+    display: block;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 7px;
+    font-weight: 600;
+}
+
+.form-control {
+    border-radius: 0;
+    border: 1px solid var(--border);
+    padding: 13px 15px;
+    font-family: var(--sans);
+    font-size: 0.8rem;
+}
+
+.form-control:focus {
+    border-color: var(--accent);
+    box-shadow: none;
+}
+
+.form-message {
+    font-size: 0.8rem;
+}
+
+
+/* =========================
+   MODAL
+========================= */
+
+.modal-content {
+    border: none;
+    border-radius: 0;
+}
+
+.modal-header {
+    border-bottom: 1px solid var(--border);
+}
+
+.modal-title {
+    font-family: var(--serif);
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+
+.quick-view-price {
+    font-weight: 600;
+    color: var(--accent-dark);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    background: #1d1d1d;
+    color: #aaa;
+    padding: 55px 0 25px;
+}
+
+.footer-logo {
+    font-family: var(--serif);
+    color: white;
+    font-size: 2rem;
+    letter-spacing: 2px;
+}
+
+.footer-logo span {
+    color: var(--accent);
+}
+
+.footer p {
+    font-size: 0.75rem;
+    margin-top: 5px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.social-links a {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #444;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+}
+
+.footer hr {
+    border-color: #3b3b3b;
+    margin: 35px 0 20px;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+    font-size: 0.6rem;
+    color: #777;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 991px) {
+
+    .navbar-collapse {
+        background: var(--warm-white);
+        padding: 20px;
+        margin-top: 10px;
+    }
+
+    .nav-link {
+        padding: 10px 0;
+    }
+
+    .hero-content {
+        padding-top: 140px;
+    }
+
+    .hero-image-wrapper {
+        padding-top: 20px;
+    }
+
+    .hero-image {
+        height: 600px;
+    }
+
+    .floating-card {
+        left: 20px;
+    }
+
+}
+
+@media (max-width: 767px) {
+
+    .section-padding {
+        padding: 70px 0;
+    }
+
+    .hero-content h1 {
+        font-size: 3.4rem;
+    }
+
+    .hero-image {
+        height: 500px;
+    }
+
+    .hero-features {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .floating-card {
+        bottom: 20px;
+        left: 15px;
+    }
+
+    .product-image {
+        height: 430px;
+    }
+
+    .about-image {
+        height: 500px;
+    }
+
+    .about-image-wrapper {
+        padding-right: 20px;
+        padding-bottom: 20px;
+    }
+
+    .contact-form-card {
+        padding: 25px;
+    }
+
+    .social-links {
+        justify-content: flex-start;
+    }
+
+}
+
+@media (max-width: 575px) {
+
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
+    .product-image {
+        height: 400px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+    }
+
+}
+/* ========================================
+   LUNA BOUTIQUE - MOBILE NAVBAR FIX
+   ======================================== */
+
+@media (max-width: 991px) {
+
+    /* Keep mobile menu inside the screen */
+    .navbar-collapse {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+        box-sizing: border-box;
+    }
+
+    /* Keep navigation within available width */
+    .navbar-nav {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Make each link only as wide as its text */
+    .navbar-nav .nav-link {
+        display: inline-block;
+        width: auto;
+        max-width: max-content;
+        padding: 10px 0;
+        margin: 0;
+        position: relative;
+    }
+
+    /* Fix the decorative line */
+    .navbar-nav .nav-link::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 1px;
+        background: var(--accent);
+        bottom: 4px;
+        left: 0;
+        transform: none;
+        transition: width 0.3s ease;
+    }
+
+    /* Active / hover line */
+    .navbar-nav .nav-link:hover::after,
+    .navbar-nav .nav-link.active::after {
+        width: 70%;
+    }
+
+    /* Prevent long menu items from causing horizontal overflow */
+    .navbar-nav .nav-item {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+
+/* ========================================
+   EXTRA SMALL SCREENS
+   ======================================== */
+
+@media (max-width: 575px) {
+
+    .navbar-collapse {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 0.78rem;
+        letter-spacing: 1px;
+    }
+}
